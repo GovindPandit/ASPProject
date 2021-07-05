@@ -1,0 +1,15 @@
+﻿@model ASPProject.Models.User
+
+@using (Html.BeginForm("Search", "User", FormMethod.Post,new { @class = "p-2" }))
+{
+
+    <div class="form-group">
+        <label>@Html.DisplayNameFor(m => m.Username)</label>
+        @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Username) })
+        @Html.ValidationMessageFor(m => m.Username, null, new { @class = "text-danger" })
+    </div>
+    <div>
+        <input type="submit" value="Submit" class="btn btn-primary btn-block"/>
+    </div>
+}
+
